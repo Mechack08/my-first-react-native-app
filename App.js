@@ -10,6 +10,9 @@ export default function App() {
   const [isModalOn, setIsModalOn] = useState(false);
 
   const addGoalHandeler = (newGoal) => {
+    if (newGoal.length === 0) {
+      return;
+    }
     setGoals((prevState) => [
       ...prevState,
       { id: Math.random().toString(), value: newGoal },
